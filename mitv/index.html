@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="http://libs.baidu.com/jquery/1.7.0/jquery.min.js"></script>
+    <style type="text/css">
+        body{padding: 0; margin: 0;}
+        .content{position:relative;}
+
+        @-webkit-keyframes soundbarShellAnimate1 {
+            0% {
+                -webkit-transform: translate3d(530px, 0, 0);
+            }
+            25% {
+                -webkit-transform: translate3d(400px, 200px, 0);
+            }
+            50%{
+                -webkit-transform:translate3d(250px, 400px, 0);
+            }
+            75%{
+                -webkit-transform:translate3d(100px, 200px, 0);
+            }
+            100% {
+                -webkit-transform: translate3d(0, 0, 0);
+            }
+        }
+        @-webkit-keyframes soundbarShellAnimate2 {
+            0% {
+                -webkit-transform: translate3d(-530px, 0, 0);
+            }
+
+            100% {
+                -webkit-transform: translate3d(0, 0, 0);
+            }
+        }
+        @-webkit-keyframes soundbarTextAnimate {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+        @keyframes soundbarShellAnimate1 {
+            0% {
+                transform: translate3d(530px, 0, 0);
+            }
+
+            100% {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        @keyframes soundbarShellAnimate2 {
+            0% {
+                transform: translate3d(-530px, 0, 0);
+            }
+
+            100% {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        @keyframes soundbarTextAnimate {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+        .content .mao{width:1556px;height: 203px; background: url(http://img03.mifile.cn/webfile/images/2014/cn/goods/mitv2/home-soundbar-shell.png) left center no-repeat; position:absolute; left:0; top:52px;}
+
+        .event1 .mao{-webkit-transform: translate3d(530px, 0, 0); -webkit-animation: soundbarShellAnimate1 2s 0.5s forwards;
+            transform: translate3d(530px, 0, 0); animation: 1s ease 0.5s normal forwards 1 soundbarShellAnimate1;left:-530px;}
+
+        .event2 .mao{-webkit-transform: translate3d(-530px, 0, 0); -webkit-animation: soundbarShellAnimate2 1s 0.5s forwards;
+            transform: translate3d(-530px, 0, 0); animation: 1s ease 0.5s normal forwards 1 soundbarShellAnimate2;}
+
+        .content .text{width:128px; height:150px; position:absolute;left: 957px;top:152px; opacity: 0;}
+        .content .text2{left: 1143px;}
+
+        .event1 .text{ -webkit-animation:  soundbarTextAnimate 1s  .5s  forwards;
+            animation: .5s ease 1s normal forwards 1 soundbarTextAnimate;}
+
+        .event2 .text{ opacity: 0;}
+        .text .line{width: 1px; height: 100px; background:#6d6d6d; margin: 0 60px;}
+        .text .txt{font-size: 12px;color:#6d6d6d; text-align: center; padding-top: 8px;}
+
+    </style>
+    <script type="text/javascript">
+        function show()
+        {
+            var cnt = $(".content");
+            if(cnt.attr("class") == "content" || cnt.hasClass("event2"))
+                cnt.attr("class", "content event1");
+            else
+                cnt.attr("class", "content event2");
+        }
+        $(function(){
+            setTimeout(show, 1000);
+        });
+    </script>
+</head>
+<body>
+<p><a href="javascript:;" onclick="show()">please chlick me</a></p>
+
+<div class="content">
+    <img src="http://img03.mifile.cn/webfile/images/2014/cn/goods/mitv2/home-soundbar-body.jpg">
+    <div class="mao"></div>
+    <div class="text text1">
+        <div class="line"></div>
+        <div class="txt">全屏扬声器</div>
+    </div>
+    <div class="text text2">
+        <div class="line"></div>
+        <div class="txt">丝膜高音扬声器</div>
+    </div>
+</div>
+</body>
+</html>
